@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #0474e4;
+}
+
+.login-box {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box label {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.login-box input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+
+}
+
+.login-box button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #34e40d;
+}
+
+</style>  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Form validation
+$(document).ready(function() {
+    $("#loginForm").submit(function(event) {
+      event.preventDefault();
+  
+      // Validate username
+      if ($("#username").val().length < 4) {
+        alert("Username must be at least 4 characters long.");
+        return false;
+      }
+  
+      // Validate password
+      if ($("#password").val().length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return false;
+      }
+  
+      // If all validations pass, submit the form
+      if ($("#username").val().length >= 4 && $("#password").val().length >= 8) {
+        // Submit the form using AJAX or fetch API
+        // (Replace this with your actual submission logic)
+        console.log("Form submitted successfully.");
+      }
+    });
+
+    $("#loginForm").submit(function(event) {
+  event.preventDefault();
+
+  // Form validation logic
+
+  // Clear input fields
+  $("#username").val("");
+  $("#password").val("");
+
+  // Submit the form using AJAX or fetch API
+  // (Replace this with your actual submission logic)
+  console.log("Form submitted successfully.");
+});
+
+  });
+  
+    </script>
+  </body>
+</html>
+
